@@ -35,7 +35,7 @@ func (l *AgentOut) initLogger(dsn string) (*log.Logger, error) {
 	if err != nil {
 		return nil, err
 	}
-	hook := logrusagent.New(
+	hook, _ := logrusagent.New(
 		conn, logrusagent.DefaultFormatter(
 			log.Fields{
 				"app_id":      AppID,
